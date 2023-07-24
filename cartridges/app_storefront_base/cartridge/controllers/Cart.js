@@ -106,8 +106,8 @@ server.post('AddProduct', function (req, res, next) {
         collections.forEach(allLineItems, function (pli) {
             if (pli.UUID === result.uuid) {
                 Transaction.wrap(function () {
-                    pli.custom.bonusProductLineItemUUID = 'bonus'; // eslint-disable-line no-param-reassign
-                    pli.custom.preOrderUUID = pli.UUID; // eslint-disable-line no-param-reassign
+                    pli.custom.bonusProductLineItemUUID = 'bonus';
+                    pli.custom.preOrderUUID = pli.UUID;
                 });
             }
         });
